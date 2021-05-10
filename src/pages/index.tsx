@@ -1,11 +1,10 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-
+import React from "react"
+import { PageProps, Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+const BlogIndex: React.FC<PageProps<GatsbyTypes.IndexQuery>> = ({ data, location }) => {
+  const siteTitle = data.site?.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -22,7 +21,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query Index {
     site {
       siteMetadata {
         title
