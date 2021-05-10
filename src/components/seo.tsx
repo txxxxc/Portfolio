@@ -14,10 +14,10 @@ type Props = {
   lang?: string,
   meta?: [any]
   title: string,
-
+  isRootPath: boolean
 }
 
-const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
+const Seo: React.FC<Props> = ({ description, lang, meta, title, isRootPath }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -43,7 +43,7 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ""}
+      titleTemplate={isRootPath ? `${defaultTitle}` : `%s | ${defaultTitle}`}
       meta={[
         {
           name: `description`,

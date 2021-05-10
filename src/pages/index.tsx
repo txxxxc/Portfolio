@@ -5,15 +5,11 @@ import Seo from "../components/seo"
 
 const BlogIndex: React.FC<PageProps<GatsbyTypes.IndexQuery>> = ({ data, location }) => {
   const siteTitle = data.site?.siteMetadata?.title || `Title`
-
+  const rootPath = `${__PATH_PREFIX__}/`
+  const isRootPath = location.pathname === rootPath
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="Tomoya Tanaka Portfolio" />
-      <p>
-        No blog posts found. Add markdown posts to "content/blog" (or the
-        directory you specified for the "gatsby-source-filesystem" plugin in
-        gatsby-config.js).
-      </p>
+    <Layout location={location} title={""}>
+      <Seo title="Tomoya Tanaka Portfolio" isRootPath={isRootPath} />
     </Layout>
   )
 }
