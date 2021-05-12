@@ -58,6 +58,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-typegen`
+    `gatsby-plugin-typegen`,
+    `gatsby-plugin-styled-components`
   ],
 }

@@ -1,5 +1,6 @@
-import * as React from "react"
-import { PageProps, Link } from "gatsby"
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '../utilities/theme'
 
 type Props = {
   title: string
@@ -7,13 +8,11 @@ type Props = {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <main>{children}</main>
-      <footer>
-      </footer>
-    </div>
+      <footer></footer>
+    </ThemeProvider>
   )
 }
 
