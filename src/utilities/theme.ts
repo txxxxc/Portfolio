@@ -41,5 +41,5 @@ export const theme = {
 type AppTheme = typeof theme
 
 declare module 'styled-components' {
-    type DefaultTheme = AppTheme
+    interface DefaultTheme extends AppTheme {}
 }

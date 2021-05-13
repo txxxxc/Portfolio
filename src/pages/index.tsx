@@ -1,5 +1,6 @@
 import { graphql, PageProps } from 'gatsby'
 import React from 'react'
+import Header from '../components/Header'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
@@ -11,6 +12,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.IndexQuery>> = ({
     return (
         <Layout location={location} title={''}>
             <Seo title="Tomoya Tanaka Portfolio" isRootPath={isRootPath} />
+            <Header />
         </Layout>
     )
 }

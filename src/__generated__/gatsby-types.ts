@@ -3355,6 +3355,11 @@ type IndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 type IndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
+type usersttworkspacePortfoliosrccomponentsHeaderTsx3195109613QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type usersttworkspacePortfoliosrccomponentsHeaderTsx3195109613Query = { readonly placeholderImage: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> };
+
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
