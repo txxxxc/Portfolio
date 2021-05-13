@@ -32,9 +32,9 @@ export const theme = {
             yellow: '#BFD92B',
             blue: '#2BD6D9',
         },
-        language: {
-            japanese: 'Hiragino Kaku Gothic',
-        },
+    },
+    language: {
+        japanese: 'Hiragino Kaku Gothic',
     },
 } as const
 
