@@ -72,6 +72,7 @@ const TopLeftPattern = {
     backgroundPosition: 'top left',
     top: '0%',
     left: '0%',
+    zIndex: -1,
 }
 
 const BottomRightPattern = {
@@ -79,6 +80,7 @@ const BottomRightPattern = {
     backgroundPosition: 'bottom right',
     bottom: '0%',
     right: '0%',
+    zIndex: -1,
 }
 
 export default Header

@@ -1,8 +1,30 @@
+import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 import { Section, SectionTitle, Wrapper } from '../utilities/style'
 
 const AboutMe: React.FC<unknown> = () => {
+    const { allFile } = useStaticQuery<GatsbyTypes.AboutMeQuery>(
+        graphql`
+            query AboutMe {
+                allFile(filter: { relativeDirectory: { eq: "links" } }) {
+                    edges {
+                        node {
+                            childImageSharp {
+                                gatsbyImageData(
+                                    width: 64
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        `
+    )
+    console.log(allFile.edges)
     const socialAccounts = [
         {
             name: 'github',
@@ -33,13 +55,33 @@ const AboutMe: React.FC<unknown> = () => {
                             Tech!という会社で中高生に向けにRubyを使ったWebサービスの開発、Swiftを使ったiOSアプリの開発について教えています。また、そこで使用する教科書の作成もしています。
                         </p>
                         <SocialLinks>
-                            {socialAccounts.map((link, i) => (
-                                <div key={i}>
-                                    {link.name}, {link.url}
-                                </div>
-                            ))}
+                            {allFile.edges.map((edge, i) => {
+                                const socialAccount = socialAccounts[i]
+                                return (
+                                    <a
+                                        href={socialAccount.url}
+                                        key={i}
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                        <GatsbyImage
+                                            key={i}
+                                            image={
+                                                edge.node.childImageSharp
+                                                    ?.gatsbyImageData
+                                            }
+                                            alt={socialAccount.name}
+                                        />
+                                    </a>
+                                )
+                            })}
                         </SocialLinks>
                     </Information>
+                    <Avatar>
+                        <StaticImage
+                            src="../images/about-me/portrait-image.png"
+                            alt={'avatar'}
+                        />
+                    </Avatar>
                 </Content>
             </Wrapper>
         </Section>
@@ -78,7 +120,12 @@ const Information = styled.div`
 const SocialLinks = styled.div`
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    > a {
+        display: block;
+        :not(:nth-child(1)) {
+            margin-left: 8px;
+        }
+    }
 `
 
 const Avatar = styled.div``
