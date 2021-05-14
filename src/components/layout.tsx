@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import Footer from '../components/Footer'
 import { theme } from '../utilities/theme'
 
 type Props = {
@@ -11,7 +12,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
             <main>{children}</main>
-            <footer></footer>
+            <Footer />
         </ThemeProvider>
     )
 }

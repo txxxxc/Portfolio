@@ -6,7 +6,7 @@ export const flexCenter = css`
     align-items: center;
 `
 export const Section = styled.section`
-    padding-top: 50px;
+    padding: 50px 0;
     width: 100%;
     ${flexCenter}
 `
