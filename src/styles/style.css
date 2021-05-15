@@ -1,17 +1,18 @@
 :root {
-  --background: #112E40;
-  --white: #fafafa;
+    --background: #112e40;
+    --white: #fafafa;
 }
 
 * {
-  font-family: Futura;
+    font-family: Futura;
+    box-sizing: border-box;
 }
 
 *:focus {
-  outline: none;
+    outline: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--white);
+    background: var(--background);
+    color: var(--white);
 }

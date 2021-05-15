@@ -1,3 +1,4 @@
+import { StaticImage } from 'gatsby-plugin-image'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Section, SectionTitle, Wrapper } from '../utilities/style'
@@ -31,15 +32,22 @@ const Writing: React.FC<unknown> = () => {
         <Section>
             <Wrapper>
                 <SectionTitle>Writing</SectionTitle>
-                {posts.map((post, i) => (
-                    <Post
-                        href={post.url}
-                        key={i}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <p>{post.title}</p>
-                    </Post>
-                ))}
+                <PostsContainer>
+                    {posts.map((post, i) => (
+                        <Post
+                            href={post.url}
+                            key={i}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/writing/qiita.png"
+                                alt="qiita"
+                                width={87}
+                            />
+                            <p>{post.title}</p>
+                        </Post>
+                    ))}
+                </PostsContainer>
             </Wrapper>
         </Section>
     )

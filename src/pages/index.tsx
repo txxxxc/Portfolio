@@ -3,6 +3,7 @@ import React from 'react'
 import AboutMe from '../components/AboutMe'
 import Header from '../components/Header'
 import Layout from '../components/layout'
+import NavBar from '../components/NavBar'
 import Seo from '../components/seo'
 import Skills from '../components/Skills'
 import Works from '../components/Works'
@@ -16,6 +17,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.IndexQuery>> = ({
     return (
         <Layout location={location} title={''}>
             <Seo title="Tomoya Tanaka Portfolio" isRootPath={isRootPath} />
+            <NavBar />
             <Header />
             <AboutMe />
             <Skills />

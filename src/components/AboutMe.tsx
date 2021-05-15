@@ -39,6 +39,7 @@ const AboutMe: React.FC<unknown> = () => {
             url: 'https://qiita.com/tanaka-tt',
         },
     ]
+    console.log(socialAccounts[0]['name'])
     return (
         <Section>
             <Wrapper>
@@ -111,9 +112,9 @@ const Information = styled.div`
         color: ${props => props.theme.colors.gray};
     }
     p {
-        font-size: 24px;
+        font-size: 20px;
         font-family: ${props => props.theme.language.japanese};
-        line-height: 1.5;
+        line-height: 2;
         flex-grow: 1;
     }
 `
