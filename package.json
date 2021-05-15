@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "tt-portfolio",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "tt portfolio",
   "version": "0.1.0",
   "author": "Tomoya Tanaka <tomoya113.code@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.3.1",
@@ -55,16 +52,11 @@
     "typescript": "^4.2.4",
     "typesync": "^0.8.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
