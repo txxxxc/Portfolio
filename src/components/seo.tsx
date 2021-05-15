@@ -91,7 +91,7 @@ const Seo: React.FC<Props> = ({
                     content: `summary`,
                 },
                 {
-                    name: `og:image`,
+                    property: `og:image`,
                     content: `https://www.tomoyatanaka.site/${imageSharp?.fixed?.src}`,
                 },
                 {
