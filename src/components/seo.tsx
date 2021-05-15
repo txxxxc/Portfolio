@@ -92,7 +92,7 @@ const Seo: React.FC<Props> = ({
                 },
                 {
                     name: `image`,
-                    content: imageSharp?.fixed?.src,
+                    content: `https://www.tomoyatanaka.site/${imageSharp?.fixed?.src}`,
                 },
                 {
                     name: `twitter:creator`,
