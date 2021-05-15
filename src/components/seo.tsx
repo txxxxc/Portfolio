@@ -36,9 +36,9 @@ const Seo: React.FC<Props> = ({
     title,
     isRootPath,
 }) => {
-    const { site } = useStaticQuery(
+    const { site, imageSharp } = useStaticQuery<GatsbyTypes.SEOQuery>(
         graphql`
-            query {
+            query SEO {
                 site {
                     siteMetadata {
                         title
@@ -48,12 +48,17 @@ const Seo: React.FC<Props> = ({
                         }
                     }
                 }
+                imageSharp {
+                    fixed {
+                        src
+                    }
+                }
             }
         `
     )
 
-    const metaDescription = description || site.siteMetadata?.description
-    const defaultTitle = site.siteMetadata?.title
+    const metaDescription = description || site?.siteMetadata?.description
+    const defaultTitle = site?.siteMetadata?.title
 
     return (
         <Helmet
@@ -86,8 +91,12 @@ const Seo: React.FC<Props> = ({
                     content: `summary`,
                 },
                 {
+                    name: `image`,
+                    content: imageSharp?.fixed?.src,
+                },
+                {
                     name: `twitter:creator`,
-                    content: site.siteMetadata?.social?.twitter || ``,
+                    content: site?.siteMetadata?.social?.twitter || ``,
                 },
                 {
                     name: `twitter:title`,

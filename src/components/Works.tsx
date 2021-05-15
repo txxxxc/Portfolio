@@ -114,6 +114,7 @@ const Work = styled.a`
     margin: 10px 24px;
     color: ${props => props.theme.colors.white};
     text-decoration: none;
+
     h4 {
         font-family: ${props => props.theme.language.japanese};
         font-size: 32px;
@@ -128,6 +129,7 @@ const Work = styled.a`
 `
 
 const Thumbnail = styled(GatsbyImage)`
+    border-radius: 10px;
     transition: box-shadow 0.2s;
     ${Work}:hover & {
         box-shadow: 0px 0px 15px #fafafa;
