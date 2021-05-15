@@ -3,10 +3,10 @@ module.exports = {
         title: `Tomoya Tanaka Portfolio`,
         author: {
             name: `Tomoya Tanaka`,
-            summary: `who lives and works in San Francisco building useful things.`,
+            summary: `Engineer, Tomoya Tanaka`,
         },
-        description: `A starter blog demonstrating what Gatsby can do.`,
-        siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+        description: `Tomoya Tanaka Portfolio`,
+        siteUrl: `https://www.tomoyatanaka.site`,
         social: {
             twitter: ``,
         },

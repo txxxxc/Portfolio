@@ -108,7 +108,6 @@ const Container = styled.div`
 
 const Work = styled.a`
     display: block;
-    width: 45%;
     max-width: 460px;
     min-height: 500px;
     margin: 10px 24px;
