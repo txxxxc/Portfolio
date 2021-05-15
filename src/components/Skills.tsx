@@ -102,7 +102,7 @@ const CardContainer = styled.div`
     justify-content: center;
     flex-wrap: wrap;
 `
-const Card = styled.div`
+const Card = styled.div<{ color: string }>`
     max-width: 230px;
     min-width: 230px;
     width: 25%;
@@ -131,9 +131,6 @@ const Card = styled.div`
         display: flex;
         align-items: center;
     }
-    /* :not(:nth-child(1)) {
-        margin-left: 30px;
-    } */
 `
 
 const ImageContainer = styled.div`

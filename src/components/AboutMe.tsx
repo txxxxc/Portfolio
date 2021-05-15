@@ -24,7 +24,6 @@ const AboutMe: React.FC<unknown> = () => {
             }
         `
     )
-    console.log(allFile.edges)
     const socialAccounts = [
         {
             name: 'github',
@@ -39,7 +38,6 @@ const AboutMe: React.FC<unknown> = () => {
             url: 'https://qiita.com/tanaka-tt',
         },
     ]
-    console.log(socialAccounts[0]['name'])
     return (
         <Section>
             <Wrapper>

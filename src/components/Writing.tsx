@@ -27,7 +27,6 @@ const Writing: React.FC<unknown> = () => {
                 setPosts(data)
             })
     }, [])
-    console.log(posts)
     return (
         <Section>
             <Wrapper>
