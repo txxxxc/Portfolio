@@ -88,7 +88,7 @@ const Seo: React.FC<Props> = ({
                 },
                 {
                     property: `og:image`,
-                    content: `https://www.tomoyatanaka.site/${imageSharp?.fixed?.src}`,
+                    content: `https://www.tomoyatanaka.site${imageSharp?.fixed?.src}`,
                 },
                 {
                     name: `twitter:card`,
