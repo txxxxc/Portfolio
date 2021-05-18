@@ -68,14 +68,16 @@ const Works: React.FC<unknown> = () => {
                             )
                         })
                         return (
-                            <Work href={works[i].url} key={i}>
-                                <Thumbnail
-                                    image={
-                                        edge.node.childImageSharp
-                                            ?.gatsbyImageData
-                                    }
-                                    alt={edge.node.name}
-                                />
+                            <Work key={i}>
+                                <a href={works[i].url}>
+                                    <Thumbnail
+                                        image={
+                                            edge.node.childImageSharp
+                                                ?.gatsbyImageData
+                                        }
+                                        alt={edge.node.name}
+                                    />
+                                </a>
                                 <h4>{works[i].title}</h4>
                                 <p>{works[i].description}</p>
                                 <UsedLanguageContainer>
@@ -106,7 +108,7 @@ const Container = styled.div`
     flex-wrap: wrap;
 `
 
-const Work = styled.a`
+const Work = styled.div`
     display: block;
     max-width: 460px;
     min-height: 500px;

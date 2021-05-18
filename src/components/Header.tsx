@@ -2,11 +2,14 @@ import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import { getImage, StaticImage } from 'gatsby-plugin-image'
 import { convertToBgImage } from 'gbimage-bridge'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { flexCenter } from '../utilities/style'
 
 const Header: React.FC<unknown> = () => {
+    const [dimensions, setDimensions] = useState()
+    const headerRef = useRef<HTMLDivElement>(null)
+
     const { placeholderImage } = useStaticQuery(
         graphql`
             query {
@@ -25,16 +28,36 @@ const Header: React.FC<unknown> = () => {
         `
     )
 
+    useEffect(() => {
+        if (!headerRef.current) {
+            return
+        }
+        setDimensions(headerRef)
+    }, [headerRef])
+
+    const handleMove = (e: MouseEvent) => {
+        const {
+            x,
+            y,
+            width,
+            height,
+        } = dimensions.current?.getBoundingClientRect()
+        const centerPoint = { x: x + width / 2, y: y + height / 2 }
+        const gapX = -(e.clientX - centerPoint.x) * 0.1
+        const gapY = -(e.clientY - centerPoint.y) * 0.1
+    }
+
     const image = getImage(placeholderImage)
 
     const bgImage = convertToBgImage(image)
 
     return (
         <StyledBackgroundImage
+            onMouseMove={handleMove}
             Tag="section"
             {...bgImage}
             preserveStackingContext>
-            <Title>
+            <Title ref={headerRef}>
                 WELCOME TO <br />
                 MY PORTFOLIO
             </Title>
